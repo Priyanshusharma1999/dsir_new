@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain one or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    (b5_body_schema == 'light' ? ' text-dark' : (b5_body_schema == 'dark' ? ' text-light' :  ' ')),
+    (b5_body_bg_schema != 'none' ? " bg-#{b5_body_bg_schema}" : ' '),
+    'd-flex flex-column h-100'
+  ]
+%}
+
+<!DOCTYPE html>
+<html{{ html_attributes.addClass('h-100') }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="DSIR, Department of Scientific &amp; Industrial Research, DSIR India, Scientific Research, Industrial Research, CSIR, Council of Scientific &amp; Industrial Research, CSIR India, NISSAT, National Information System for Science And Technology, Information System, India, Introduction, Organizational and Functional Structure, Our Mission and Vision, Strategic Plan, Detailed Demand for Grants, Departmental Strategy, Nodal Officers, Immovable Property Returns of Officers, Current Programmes, BIRD, Building Industrial R&amp;D Promotion Programme, IRDPP, Industrial R&amp;D Promotion Programme, RDI, Research &amp; Development By Industry, SIROs, Scientific and Industrial Research Organisations, PFRI, Public Funded Research Institutions, FI, Fiscal Incentives, APCTT, Asia and Pacific Centre for Transfer of Technology, IT-eG, Information Technology and e-Governance, CRTDHs, Common Research and Technology Development Hubs, PACE, Patent Acquisition and Collaborative Research and Technology Development, PRISM, Promoting Innovations in Individuals, Start-ups and MSMEs, A2K+, Access to Knowledge for Technology Development and Dissemination, TDUPW, Technology Development and Utlization Programme for Women, Conferences &amp; Events, National and International Conferences, Exhibitions, Studies, Industrial Technology related Studies, Erstwhile Programmes, TDDP, Technology Development and Demonstration Programme, TePP, Technopreneur Promotion Programme, TMP, Technology Management Programme, ITTP, International Technology Transfer Programme, CPP, Consultancy Promotion Programme, TIFP, Technology Information Facilitation Programme, Client`s / Citizen`s Charter, Tenders, Vacancies, Advertisements, RTI, Right to Information Act, Online Application Submission, What`s New, Press Releases, Feedback, FAQ, Contact Us, CPSMS, Central Plan Scheme Monitoring System, Administrative Setup, Telephone and Email Directory, List of projects Supported, Result Framework Document, Plan Documents, Promotion of Official Language, Parliament Q and A, Lok Sabha, Rajya Sabha, Publications and Reports, Publications, Technical Reports, Directories, Annual Reports, Annual Reports English, Annual Reports Hindi, Download Forms, Circulars, Events, CoA, MST, Useful URLs, Abbreviations, DSIR Organizations, Autonomous Bodies, CDC, Public Sector Enterprises, Download Brochures, Web Information Manager, Disclaimer, Terms of Use, Accessibility Statement, Hyperlinking Policy, Privacy Policy, Copyright Policy, Sitemap,  UN Agencies, APCTT, PATSER, TATT, NRFC, SEETOT, NRDC, CEL">
+    <meta name="description" content="Govt. of India's Department for Scientific &amp; Industrial Research">
+    <meta name="title" content="Dsir">
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes.addClass(body_classes) }}>
+    {#
+      Keyboard navigation/accessibility link to main content section in
+      page.html.twig.
+    #}
+    <div class="visually-hidden-focusable skip-link p-3 container">
+      <a href="#main-content" class="p-2">
+        {{ 'Skip to main content'|t }}
+      </a>
+    </div>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>
+

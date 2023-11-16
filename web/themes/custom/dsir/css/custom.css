@@ -1,0 +1,49 @@
+
+:root{
+
+  --primary-color: #243B58;
+  --bs-body-bg: #f9f8f9;
+  --bs-body-font-family: 'Alice', serif;
+  --border-left-color: #e2e0e0;
+}
+
+
+/*
+    Header
+*/
+
+.header{
+  z-index: 3;
+  box-sizing: border-box;
+}
+.bg-color{
+  background-color: var(--primary-color);
+}
+.list-type{
+  list-style-type: none;
+}
+.top_header .left-header .top_col-2{
+  line-height: 1.28rem;
+  border-left: 1px solid var(--border-left-color);
+  font-size: 0.9rem;
+}
+.top_header .left-header .top_col-2 span{
+  margin-left: 4px;
+}
+.top_header .left-header .top_col-1{
+  margin-right: 5px;
+}
+.top_header .right-header .cf{
+  border-left: 1px solid var(--border-left-color);
+  color: var(--border-left-color);
+  padding: 0 9px;
+}
+
+
+
+
+
+
+
+
+
