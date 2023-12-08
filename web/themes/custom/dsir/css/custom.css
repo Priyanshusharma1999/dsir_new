@@ -9,7 +9,7 @@
 
 
 /*
-    Header
+    top-header
 */
 
 .header{
@@ -39,10 +39,60 @@
   padding: 0 9px;
 }
 
+/*
+  header-logo
 
+*/
 
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(0.25); }
+.blur { filter: blur(3px); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.rss.opacity { filter: opacity(50%); }
+.header_wrapper{
+    background:var(--bs-body-bg);
+}
 
+.header_wrapper .left-logo img{
+  padding-top: 0.5em;
+}
+.right-logo{
+  margin: 0 !important;
+}
+.right-logo li:nth-child(2) img {
+  padding-top: 0.5em;
+}
 
+.top-nav{
+  margin: 0;
+  padding: 0;
+  background: #243B58;
+  width: 100%;
+}
+.top-nav .nav-menu{
+  margin: 0 !important;
+  padding: 0.6em;
+  gap: 1em;
+}
+.top-nav .nav-menu .nav-item a{
+  color:var(--bs-body-bg);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: medium;
+}
+
+.top-nav .nav-menu .nav-item{
+  padding:5px 10px 5px 10px ;
+
+}
+
+.top-nav .nav-menu .nav-item :hover {
+  background: rgba(202, 48, 48, 0.814);
+
+}
 
 
 

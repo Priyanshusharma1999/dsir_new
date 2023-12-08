@@ -45,7 +45,7 @@
 <header class="header top_header">
     <div class="container-fluid bg-color">
         <div class="row align-items-center">
-            <div class="d-flex col-sm-12 col-md-12 col-lg-6 col-xl-6 left-header" >
+            <div class="d-flex col-sm-12 col-md-6 left-header" >
                     <ul class="m-0 p-1 lh-1 text-white list-type d-flex flex-row">
                         <li class="fs-5 d-flex flex-column top_col-1">
                             <span class="text-end">भारत सरकार</span>
@@ -57,7 +57,7 @@
                         </li>
                     </ul>
             </div>
-            <div class="d-flex justify-content-end col-sm-12 col-md-12 col-lg-6 col-xl-6 right-header">
+            <div class="d-flex justify-content-end col-sm-12 col-md-6 right-header">
                     <ul class="d-flex p-1 list-type text-white">
                         <li class="ico-skip cf" title="Skip to main content"><a href="#skip-content">Skip to main content</a></li>
                         <li class="ico-search cf"></li>
@@ -69,8 +69,42 @@
             </div>
         </div>
     </div>
+    <div class="header_wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="d-flex justify-content-between">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 col-xxl-4 left-logo">
+                        <a href="/" alt="Home">
+                            <img class="dsir_logo img-fluid grayscale" src="\themes\custom\dsir\images\dsir_logo.png" alt="Dsir Logo">
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7 col-xxl-8">
+                        <ul class="d-flex justify-content-end list-type right-logo">
+                            <li>
+                                <a target="_blank" href="https://swachhbharat.mygov.in/" title="Swachh Bharat, External link that opens in a new windows">
+                                    <img class="img-fluid" src="\themes\custom\dsir\images\swach-bharat.png" alt="swach bharat">
+                                </a>
+                            </li>
+                            <li>
+                               <a  target="_blank" href="https://www.g20.org/en/" title="G20, External link that opens in a new windows">
+                                    <img class="img-fluid" src="\themes\custom\dsir\images\G.20.png" alt="G20">
+                                </a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
-<nav></nav>
+<!-- Naviagtion -->
+<nav class="top-nav">
+  <div class="container">
+    {{ page.nav_main }}
+  </div>
+</nav>
 <aside></aside>
 <main></main>
 <footer></footer>
