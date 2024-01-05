@@ -11,7 +11,9 @@
   padding: 1rem;
   display:grid;
   gap: 1rem;
-  background-color: bisque;
+  background-image: url("/themes/custom/dsir/images/home-bg.svg");
+  background-repeat: no-repeat; 
+  
 }
 /*
     top-header
@@ -87,13 +89,12 @@
 }
 .top-nav .nav-menu{
   margin: 0 !important;
-  gap: 1em;
 }
 .top-nav .nav-menu .nav-item a{
   color:var(--bs-body-bg);
   text-decoration: none;
   font-weight: 400;
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 .top-nav .nav-menu .nav-item{
